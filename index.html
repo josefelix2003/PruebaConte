@@ -12,7 +12,7 @@
             justify-content: center;
             height: 100vh;
             font-family: Arial, sans-serif;
-            background-image: url('images/Fond.png'); /* Image de fond personnalisée */
+            background-image: url('Fond.png'); /* Assurez-vous que le chemin est correct */
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -20,7 +20,7 @@
             color: white;
         }
         #dialogue-box {
-            background: rgba(0, 0, 0, 0.7); /* Fond semi-transparent */
+            background: rgba(0, 0, 0, 0.7);
             padding: 20px;
             border-radius: 10px;
             max-width: 80%;
@@ -44,7 +44,7 @@
             height: auto;
             border-radius: 10px;
         }
-        #next-button, .story-button {
+        #next-button {
             padding: 10px 20px;
             font-size: 1em;
             background-color: #3b82f6;
@@ -52,85 +52,5 @@
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            margin: 10px;
         }
-        #next-button:disabled {
-            background-color: #ccc;
-            cursor: not-allowed;
-        }
-    </style>
-</head>
-<body>
-    <div id="dialogue-box">
-        <p id="story-text">Bienvenue dans le conte interactif ! Choisissez une histoire pour commencer.</p>
-    </div>
-    <img id="story-image" src="" alt="Illustration du conte">
-    <div>
-        <button class="story-button" id="hansel-grettel">Hansel et Gretel</button>
-        <button class="story-button" id="story-2">Story #2</button>
-    </div>
-    <button id="next-button">Continuer</button>
-
-    <script>
-        const stories = {
-            "Hansel et Gretel": [
-                { text: "Il était une fois un petit garçon nommé Hansel et sa sœur Gretel.", image: "images/neutre.jpg" },
-                { text: "Leur famille était très pauvre et vivait au bord d'une grande forêt.", image: "images/triste.jpg" },
-                { text: "Un jour, leurs parents décidèrent de les emmener dans la forêt...", image: "images/neutre.jpg" },
-                { text: "Perdus et affamés, ils découvrirent une maison faite de pain d'épices.", image: "images/heureux.jpg" },
-                { text: "Ils s'approchèrent de la maison et commencèrent à manger les murs en pain d'épices.", image: "images/joyeux.jpg" },
-                { text: "Soudain, une vieille femme sortit de la maison et les invita à entrer.", image: "images/méfiant.jpg" },
-                { text: "Au début, elle semblait gentille et leur offrit de la nourriture.", image: "images/rassuré.jpg" },
-                { text: "Mais en réalité, c'était une sorcière qui voulait les capturer !", image: "images/effrayé.jpg" },
-                { text: "Elle enferma Hansel dans une cage pour le faire grossir et Gretel devait l’aider.", image: "images/triste.jpg" },
-                { text: "Gretel comprit le plan de la sorcière et chercha un moyen de s’échapper.", image: "images/determiné.jpg" },
-                { text: "Un jour, la sorcière demanda à Gretel de vérifier si le four était chaud.", image: "images/méfiant.jpg" },
-                { text: "Mais Gretel eut une idée : elle poussa la sorcière dans le four et referma la porte !", image: "images/courageux.jpg" },
-                { text: "Hansel et Gretel fouillèrent la maison et trouvèrent un trésor.", image: "images/emerveillé.jpg" },
-                { text: "Ils prirent le trésor et retrouvèrent le chemin de leur maison.", image: "images/soulagé.jpg" },
-                { text: "Leur père, très heureux de les revoir, pleura de joie.", image: "images/triste.jpg" },
-                { text: "Grâce au trésor, ils ne furent plus jamais pauvres et vécurent heureux.", image: "images/heureux.jpg" }
-            ],
-            "Story #2": [
-                { text: "Voici le début de l'histoire #2...", image: "images/example1.jpg" },
-                { text: "L'histoire continue dans un monde magique...", image: "images/example2.jpg" },
-                { text: "Des événements surprenants se produisent...", image: "images/example3.jpg" }
-            ]
-        };
-
-        let currentStory = [];
-        let index = 0;
-        const textContainer = document.getElementById("story-text");
-        const imageContainer = document.getElementById("story-image");
-        const nextButton = document.getElementById("next-button");
-
-        function displayStory(story) {
-            currentStory = stories[story];
-            index = 0;
-            textContainer.innerText = currentStory[index].text;
-            imageContainer.src = currentStory[index].image;
-            nextButton.disabled = false;
-        }
-
-        function nextPart() {
-            if (index < currentStory.length - 1) {
-                index++;
-                textContainer.innerText = currentStory[index].text;
-                imageContainer.src = currentStory[index].image;
-            } else {
-                nextButton.disabled = true;
-            }
-        }
-
-        document.getElementById("hansel-grettel").addEventListener("click", function() {
-            displayStory("Hansel et Gretel");
-        });
-
-        document.getElementById("story-2").addEventListener("click", function() {
-            displayStory("Story #2");
-        });
-
-        nextButton.addEventListener("click", nextPart);
-    </script>
-</body>
-</html>
+        #next
